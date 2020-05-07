@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { actions } from '../features/cart';
 
 const data = [
     { name: 'Otto', price: 100 },
@@ -13,14 +15,18 @@ const data = [
 ]
 
 const Products = () => {
+    const dispatch = useDispatch();
     const [racoons/*, setRacoons*/] = useState(data);
-    const elements = racoons.map(racoon => (
-        <div key={racoon.name}>
-            <div>{racoon.name}</div>
-            <div>Pris: {racoon.price} kr</div>
-            <button>Lägg till i kundvagn</button>
-        </div>
-    ))
+    const elements = racoons.map(racoon => {
+        const handleClick = () => dispatch(actions.addToCart(racoon));
+        return (
+            <div key={racoon.name}>
+                <div>{racoon.name}</div>
+                <div>Pris: {racoon.price} kr</div>
+                <button onClick={handleClick}>Lägg till i kundvagn</button>
+            </div>
+        );
+    })
     return (
         <div className="products">
             {elements}

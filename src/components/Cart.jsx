@@ -1,13 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const data = [
-    {
-        product: { name: 'Otto', price: 100 },
-        count: 1
-    }
-]
+// const data = [
+//     {
+//         product: { name: 'Otto', price: 100 },
+//         count: 1
+//     }
+// ]
 
 const Cart = () => {
+    const data = useSelector(state => state.cart)
     const elements = data.map(item => (
         <div key={item.product.name}>
             <div> {item.product.name} </div>
