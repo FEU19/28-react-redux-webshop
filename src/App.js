@@ -26,4 +26,11 @@ function App() {
     );
 }
 
+/* Gameplan:
+1. gör så att Products och Cart använder data för att generera JSX, i stället för statisk HTML (lista med produktobjekt osv)
+2. installera Redux
+3. skapa en feature för kundvagnen i Redux
+4. Cart ska hämta sin data från kundvagnens feature
+5. Products ska kunna lägga till i kundvagnen
+6. Cart ska kunna ändra antal och ta bort från kundvagnen*/
 export default App;
