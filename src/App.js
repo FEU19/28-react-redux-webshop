@@ -1,37 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Products from './components/Products'
+import Cart from './components/Cart'
 
 function App() {
+    const VIEW_PRODUCTS = 'products', VIEW_CART = 'cart';
+    const [view, setView] = useState(VIEW_PRODUCTS);
+    let mainContent = null;
+    if( view === VIEW_PRODUCTS ) {
+        mainContent = <Products />;
+    } else {// if( view == VIEW_CART ) {
+        mainContent = <Cart />;
+    }
+
     return (
         <>
-        <header>
-        	<h1>Tvättbjörnar 'R us</h1>
-        	<div className="cart">Kundvagn (5)</div>
-        </header>
+        <Header setView={setView} menu={{ VIEW_PRODUCTS, VIEW_CART }} />
         <main>
-        	<div className="products">
-        		<div>
-        			<div>Otto</div>
-        			<div>Pris: 100 kr</div>
-        			<button>Lägg till i kundvagn</button>
-        		</div>
-        		<div> Lena </div>
-        		<div> Ranger Rick </div>
-        		<div> Rocket </div>
-        		<div> Otto </div>
-        		<div> Lena </div>
-        		<div> Ranger Rick </div>
-        		<div> Otto </div>
-        		<div> Lena </div>
-        		<div> Ranger Rick </div>
-        		<div> Otto </div>
-        		<div> Lena </div>
-        		<div> Ranger Rick </div>
-        	</div>
+            {mainContent}
         </main>
-        <footer>
-        	Här berättar vi om företaget, varför tvättbjörnar är bra, osv.
-        </footer>
+        <Footer />
         </>
     );
 }

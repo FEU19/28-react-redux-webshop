@@ -45,3 +45,49 @@ footer {
 .products > div > :first-child {
 	flex-grow: 1;
 }
+
+.show-cart {
+	display: flex;
+	flex-direction: column;
+/* 	min-width: 25em; */
+	width: 25em;
+	margin: 0px auto;
+}
+.show-cart > div {
+	height: 8em;
+	border: 1px solid black;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+.show-cart > div > :first-child {
+	flex: 1;
+}
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.flex-row > * {
+/* 	flex: 1; */
+	width: 40%;
+}
+
+.cart-sum {
+	width: 25em;
+	margin: 2em auto;
+}
+
+nav.menu {
+	display: flex;
+	flex-direction: row;
+}
+nav.menu > * {
+	padding: 1em;
+	margin: 0px;
+}
+
+
+
+
+/*  */
