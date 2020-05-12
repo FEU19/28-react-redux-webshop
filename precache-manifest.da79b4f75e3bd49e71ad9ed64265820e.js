@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "727dec05079c3843869c243451dc62e3",
+    "revision": "a7024d2d4dc2fbb58b40c24fb7b15b34",
     "url": "/28-react-redux-webshop/index.html"
   },
   {
-    "revision": "e7b0ab244e140301f006",
+    "revision": "b7d35e13b97e1e560f06",
     "url": "/28-react-redux-webshop/static/css/main.2fb0495f.chunk.css"
   },
   {
-    "revision": "47e8a6d916a28343d49b",
-    "url": "/28-react-redux-webshop/static/js/2.6286ada8.chunk.js"
+    "revision": "4cff4fb943f6b27d5a6e",
+    "url": "/28-react-redux-webshop/static/js/2.f8569ff6.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/28-react-redux-webshop/static/js/2.6286ada8.chunk.js.LICENSE.txt"
+    "url": "/28-react-redux-webshop/static/js/2.f8569ff6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e7b0ab244e140301f006",
-    "url": "/28-react-redux-webshop/static/js/main.65f8e199.chunk.js"
+    "revision": "b7d35e13b97e1e560f06",
+    "url": "/28-react-redux-webshop/static/js/main.9969127f.chunk.js"
   },
   {
     "revision": "2a81a5f4e8b486f9f144",
