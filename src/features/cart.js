@@ -11,18 +11,63 @@ const actions = { addToCart, removeFromCart, increaseAmount, decreaseAmount };
 
 
 const initialState = [
-    {
-        product: { name: 'Otto', price: 1000 },
-        count: 1
-    }
+    // {
+    //     product: { name: 'Otto', price: 1000 },
+    //     count: 1
+    // }
 ]
 
 const reducer = createReducer(initialState, {
-    [addToCart]: (state, action) => [
-        ...state,
-        { product: action.payload, count: 1 }
-    ]  // TODO: ändra antalet i stället, om produkten redan finns i listan
+    [addToCart]: (state, action) => {
+        let found = state.find(cartItem => cartItem.product.name === action.payload.name);
+        if( found ) {
+            return state.map(cartItem => {
+                if( cartItem.product.name === action.payload.name ) {
+                    return { ...cartItem, count: cartItem.count + 1 }
+                } else {
+                    return cartItem;
+                }
+            });
+        } else {
+            return [
+                ...state,
+                { product: action.payload, count: 1 }
+            ];
+        }
+    },  // addToCart
+
+    [increaseAmount]: (state, action) => (
+        state.map(cartItem => {
+            if( cartItem.product.name === action.payload ) {
+                return { ...cartItem, count: cartItem.count + 1 }
+            } else {
+                return cartItem;
+            }
+        })
+    ),  // increaseAmount
+
+    [decreaseAmount]: (state, action) => (
+        state.map(cartItem => {
+            if( cartItem.product.name === action.payload ) {
+                return { ...cartItem, count: cartItem.count - 1 }
+            } else {
+                return cartItem;
+            }
+        })
+    ),
+
+    [removeFromCart]: (state, action) => (
+        state.filter(cartItem => cartItem.product.name !== action.payload)
+    )
 })
+
+
+
+
+
+
+
+
 
 
 export { actions, reducer };
